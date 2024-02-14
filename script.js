@@ -52,6 +52,8 @@ function calculateCalories (e) {
 
     let consumedCalories = breakfastCalories + lunchCalories + dinnerCalories + snacksCalories;
     let remainingCalories = budgetCalories - consumedCalories + exerciseCalories;
+
+    let surplusOrDeficit = remainingCalories < 0 ? "Surplus" : "Deficit";
 }
 
 function getCaloriesFromInputs (list) {
