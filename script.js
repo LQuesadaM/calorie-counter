@@ -54,6 +54,15 @@ function calculateCalories (e) {
     let remainingCalories = budgetCalories - consumedCalories + exerciseCalories;
 
     let surplusOrDeficit = remainingCalories < 0 ? "Surplus" : "Deficit";
+
+    output.innerHTML = `<span class="${surplusOrDeficit.toLowerCase()}">${Math.abs(remainingCalories)} Calorie ${surplusOrDeficit}</span>
+    <hr>
+    <p>${budgetCalories} Calories Budgeted</p>
+    <p>${consumedCalories} Calories Consumed</p>
+    <p>${exerciseCalories} Calories burn</p>
+    `;
+
+    output.classList.remove("hide");
 }
 
 function getCaloriesFromInputs (list) {
@@ -75,3 +84,4 @@ function getCaloriesFromInputs (list) {
 }
 
 addEntryButton.addEventListener("click", addEntry);
+
